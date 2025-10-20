@@ -1,39 +1,445 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Code Breakers</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Code Breakers — Commands Library</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <img src="codebreakers-logo.png" alt="Code Breakers Logo" class="logo" />
-    <h1>Code Breakers</h1>
+  <div class="center-wrap">
+    <header class="header">
+      <img src="codebreakers-logo.png" alt="Code Breakers Logo" class="logo" />
+      <h1>Code Breakers</h1>
+      <input id="search" type="search" placeholder="Search commands or descriptions..." oninput="filterCommands()" />
+    </header>
 
-    <section>
-      <h2>Linux - Basic</h2>
-      <div class="command">
-        <code>ls -l</code>
-        <button class="copy-btn" onclick="copyCommand(this)">Copy</button>
-      </div>
-      <div class="command">
-        <code>pwd</code>
-        <button class="copy-btn" onclick="copyCommand(this)">Copy</button>
-      </div>
-    </section>
+    <main class="content">
+      <!-- LINUX SECTION -->
+      <section>
+        <h2>🖥️ Linux — Basic</h2>
 
-    <section>
-      <h2>Windows - Basic</h2>
-      <div class="command">
-        <code>dir</code>
-        <button class="copy-btn" onclick="copyCommand(this)">Copy</button>
-      </div>
-      <div class="command">
-        <code>ipconfig</code>
-        <button class="copy-btn" onclick="copyCommand(this)">Copy</button>
-      </div>
-    </section>
+        <div class="command-card">
+          <div class="cmd"><code>ls -l</code></div>
+          <div class="desc">List files in current directory in long format (permissions, owner, size, date).</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>pwd</code></div>
+          <div class="desc">Print current working directory path.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>cd /path/to/dir</code></div>
+          <div class="desc">Change current directory to given path.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>cp source dest</code></div>
+          <div class="desc">Copy file from source to destination.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>mv source dest</code></div>
+          <div class="desc">Move or rename files/directories.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>rm filename</code></div>
+          <div class="desc">Remove (delete) a file. Use caution!</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>rm -rf foldername/</code></div>
+          <div class="desc">Recursively remove directory and its contents (dangerous).</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>mkdir newfolder</code></div>
+          <div class="desc">Create a new directory.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>touch file.txt</code></div>
+          <div class="desc">Create an empty file or update file's modification time.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>cat file.txt</code></div>
+          <div class="desc">Display file contents on terminal.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- LINUX - Intermediate -->
+      <section>
+        <h2>⚙️ Linux — Intermediate</h2>
+
+        <div class="command-card">
+          <div class="cmd"><code>grep -R "pattern" .</code></div>
+          <div class="desc">Search recursively for "pattern" in current directory.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>find /path -type f -name "file.txt"</code></div>
+          <div class="desc">Find files by name starting from /path.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>tar -czvf archive.tar.gz folder/</code></div>
+          <div class="desc">Create gzipped tar archive of folder.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>tar -xzvf archive.tar.gz</code></div>
+          <div class="desc">Extract a gzipped tar archive.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>chmod 755 script.sh</code></div>
+          <div class="desc">Change file permissions (owner rwx, group/others rx).</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>chown user:group file</code></div>
+          <div class="desc">Change owner and group of a file or directory.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>ps aux | less</code></div>
+          <div class="desc">List all running processes with details (paged).</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>top</code></div>
+          <div class="desc">Interactive view of running processes and system resource usage.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>htop</code></div>
+          <div class="desc">Enhanced interactive process viewer (if installed).</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>df -h</code></div>
+          <div class="desc">Show disk space usage for mounted filesystems in human-readable sizes.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>du -sh folder/</code></div>
+          <div class="desc">Show total disk usage of folder in human-readable form.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- LINUX - Advanced -->
+      <section>
+        <h2>🧪 Linux — Advanced</h2>
+
+        <div class="command-card">
+          <div class="cmd"><code>rsync -avh --progress /src/ /dst/</code></div>
+          <div class="desc">Efficient sync/copy between locations with archive mode and progress.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>ssh user@host</code></div>
+          <div class="desc">Open secure shell connection to remote host as user.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>scp file user@host:/path/</code></div>
+          <div class="desc">Securely copy file to remote host over SSH.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>sudo apt update && sudo apt upgrade</code></div>
+          <div class="desc">Update package lists and upgrade installed packages (Debian/Ubuntu).</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>journalctl -u nginx.service -f</code></div>
+          <div class="desc">Follow logs for a systemd unit (example: nginx).</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>systemctl status apache2</code></div>
+          <div class="desc">Show status of a systemd service (apache2 example).</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>iptables -L -n -v</code></div>
+          <div class="desc">List current iptables firewall rules with counters.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>ss -tulnp</code></div>
+          <div class="desc">Show listening sockets and associated processes (TCP/UDP).</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>docker ps -a</code></div>
+          <div class="desc">List all Docker containers (running and stopped).</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>crontab -e</code></div>
+          <div class="desc">Edit current user's crontab to schedule periodic tasks.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- WINDOWS SECTION -->
+      <section>
+        <h2>🪟 Windows — Basic (CMD)</h2>
+
+        <div class="command-card">
+          <div class="cmd"><code>dir</code></div>
+          <div class="desc">List files and folders in current directory (CMD).</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>cd C:\Path\To\Folder</code></div>
+          <div class="desc">Change current directory in CMD to specified path.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>ipconfig /all</code></div>
+          <div class="desc">Show detailed network configuration for all adapters.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>tasklist</code></div>
+          <div class="desc">List running processes with PID and memory usage.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>taskkill /PID 1234 /F</code></div>
+          <div class="desc">Forcefully terminate process with PID 1234.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- WINDOWS - Intermediate & PowerShell -->
+      <section>
+        <h2>🛠️ Windows — PowerShell / Advanced</h2>
+
+        <div class="command-card">
+          <div class="cmd"><code>Get-Process</code></div>
+          <div class="desc">PowerShell: list running processes with details.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>Get-Service | Where-Object {$_.Status -eq "Running"}</code></div>
+          <div class="desc">List only the running services (PowerShell).</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>netstat -ano</code></div>
+          <div class="desc">Show active network connections with owning process PID.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>chkdsk C: /f</code></div>
+          <div class="desc">Check and fix filesystem errors on drive C: (may require reboot).</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>schtasks /query /fo LIST /v</code></div>
+          <div class="desc">Query scheduled tasks with verbose output.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>DISM /Online /Cleanup-Image /RestoreHealth</code></div>
+          <div class="desc">Repair Windows image and system files (useful for corruption).</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>winget install --id=Mozilla.Firefox -e</code></div>
+          <div class="desc">Install package using winget (example: Firefox).</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="cmd"><code>powershell -Command "Start-Process notepad -Verb RunAs"</code></div>
+          <div class="desc">Launch Notepad as administrator from CMD / script.</div>
+          <div class="actions">
+            <button onclick="copyCommand(this)">Copy Command</button>
+            <button class="muted" onclick="copyDesc(this)">Copy Description</button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <small>Logo file: <code>codebreakers-logo.png</code> — use dark/green glitch style</small>
+      </footer>
+    </main>
   </div>
 
   <script src="script.js"></script>
